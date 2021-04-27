@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head/>
+<h:body>
+    <h2>Part: <b>#{partsWithComponents.part.name}</b>:</h2>
+    <ol>
+        <ui:repeat value="#{partsWithComponents.part.components}" var="component">
+            <li><h:link value="#{component.componentName}"/></li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="Component name" value="#{partsWithComponents.componentToCreate.componentName}" required="true" />
+        <h:commandButton value="Add a new component to this PC part:" action="#{partsWithComponents.createComponent}">
+            <f:param name="partId" value="#{partsWithComponents.part.id}"/>
+        </h:commandButton>
+    </h:form>
+    <h:form>
+        <h:selectOneMenu value = "#{partsWithComponents.computerIdToAssign}">
+            <f:selectItems value="#{computers.allComputers}" var="computer" itemValue="#{computer.id}" itemLabel="#{computer.name}" />
+        </h:selectOneMenu>
+        <h:commandButton value="Add a part to an existing computer" action="#{partsWithComponents.assignToComponent}">
+            <f:param name="partId" value="#{partsWithComponents.part.id}"/>
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="parts" value="Previous page"/>
+</h:body>
+</html>

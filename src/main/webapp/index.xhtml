@@ -10,11 +10,8 @@
    </h:head>
    <h:body>
       <f:view>
-         <h:outputLabel value="Hello, world"/>
+         <h:outputLabel value="Hello, to my program"/>
       </f:view>
-      <br/>
-      <a href="hello-servlet">Hello Servlet</a>
-      <br/>
       <h2>Computers:</h2>
       <ol>
          <ui:repeat value="#{computers.allComputers}" var="computer">
@@ -25,6 +22,6 @@
          <h:inputText value="#{computers.computerToCreate.name}" required="true" />
          <h:commandButton value="Create a new PC build" action="#{computers.createComputer}" />
       </h:form>
-     <!--<h:link outcome="myBatis/computers" value="MyBatis implementation"/> -->
+     <h:link outcome="myBatis/computers" value="MyBatis implementation"/>
    </h:body>
 </html>

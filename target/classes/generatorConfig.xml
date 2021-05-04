@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="PC_SHOP_DB" targetRuntime="MyBatis3Simple">
+    <context id="PC_Shop_DB" targetRuntime="MyBatis3Simple">
         <jdbcConnection driverClass="org.h2.Driver"
                         connectionURL="jdbc:h2:~/h2database/PC_SHOP_DB;AUTO_SERVER=TRUE"
                         userId="admin"
@@ -19,6 +19,11 @@
 
         <table schema="public" tableName="PART">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+        </table>
+        <table schema="public" tableName="COMPONENT">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+        </table>
+        <table schema="public" tableName="PART_COMPONENT">
         </table>
         <table schema="public" tableName="COMPUTER">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />

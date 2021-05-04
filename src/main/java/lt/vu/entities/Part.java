@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @NamedQueries({
 })
-//@Table(name = "PART")
+@Table(name = "PART")
 @Getter
 @Setter
 @EqualsAndHashCode(of={"productID"})
@@ -37,8 +37,5 @@ public class Part implements Serializable {
 
     @ManyToMany
     private List<Computer> computers;
-
-    //public Part(){
-    //}
 
 }

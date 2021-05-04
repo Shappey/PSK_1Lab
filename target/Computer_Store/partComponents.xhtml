@@ -28,6 +28,6 @@
             <f:param name="partId" value="#{partsWithComponents.part.id}"/>
         </h:commandButton>
     </h:form>
-    <h:link outcome="parts" value="Previous page"/>
+    <h:link outcome="parts?computerId=#{computer.id}" value="Previous page"/>
 </h:body>
 </html>

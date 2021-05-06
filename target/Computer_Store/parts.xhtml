@@ -17,7 +17,7 @@
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText a:placeholder="Name" value="#{pcBuildParts.partToCreate.name}" required="true" />
+        <h:inputText a:placeholder="Part Name" value="#{pcBuildParts.partToCreate.name}" required="true" />
         <h:inputText a:placeholder="Price" value="#{pcBuildParts.partToCreate.price}" required="true" />
         <h:commandButton value="Add a new part for this PC build" action="#{pcBuildParts.createPart}" >
             <f:param name="computerId" value="#{pcBuildParts.computer.id}" />

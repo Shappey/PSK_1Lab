@@ -28,6 +28,9 @@ public class Component implements Serializable {
     @Column(name = "TYPE")
     private ComponentType type;
 
+    @Column(name = "QUANTITY")
+    private Integer quantity;
+
     @ManyToOne
     private Part part;
 

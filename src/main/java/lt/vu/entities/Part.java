@@ -15,7 +15,7 @@ import java.util.List;
 @Table(name = "PART")
 @Getter
 @Setter
-@EqualsAndHashCode(of={"productID"})
+//@EqualsAndHashCode(of={"productID"})
 public class Part implements Serializable {
 
     @Id
@@ -23,14 +23,15 @@ public class Part implements Serializable {
     private Integer id;
 
     @Size(max = 20)
-   // @Column(name = "PART NAME")
+    @Column(name = "PART_NAME")
      private String name;
 
-   // @Column(name = "PRICE")
+    @Column(name = "PRICE")
     private Integer price;
 
-    //@Column(name = "PRODUCT_ID")
-     private Integer productID;
+    /// MAYBE CHANGE
+   // @Column(name = "PRODUCT_ID")
+   //  private Integer productID;
 
     @OneToMany(mappedBy = "part")
     private List<Component> components;

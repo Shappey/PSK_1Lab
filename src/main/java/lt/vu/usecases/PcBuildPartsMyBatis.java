@@ -1,50 +1,56 @@
 package lt.vu.usecases;
 
+
 import lombok.Getter;
 import lombok.Setter;
-import lt.vu.entities.Computer;
-import lt.vu.entities.Part;
-import lt.vu.persistence.ComputerDAO;
-import lt.vu.persistence.PartsDAO;
+import lt.vu.mybatis.dao.ComputerMapper;
+import lt.vu.mybatis.dao.PartMapper;
+import lt.vu.mybatis.model.Computer;
+import lt.vu.mybatis.model.Part;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+
 @Model
-public class PcBuildParts implements Serializable {
+public class PcBuildPartsMyBatis {
 
     @Inject
-    private ComputerDAO computerDAO;
+    private ComputerMapper computerMapper;
 
     @Inject
-    private PartsDAO partsDAO;
+    private PartMapper partMapper;
 
-    @Getter @Setter
+    //@Inject
+    //pprivate ClientMovieMapper clientMovieMapper;
+
+    @Getter
+    @Setter
     private Computer computer;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Part partToCreate = new Part();
 
     @PostConstruct
     public void init() {
         Map<String, String> requestParameters = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         int computerId = Integer.parseInt(requestParameters.get("computerId"));
-        this.computer = computerDAO.findOne(computerId);
+        this.computer = computerMapper.selectByPrimaryKey(computerId);
     }
 
     @Transactional
     public String createPart() {
         List<Computer> computers = new ArrayList<>();
         computers.add(this.computer);
-        partToCreate.setComputers(computers);
-        partsDAO.persist(this.partToCreate);
+        //this.partToCreate.setComputer(computers);
+        partMapper.insert(this.partToCreate);
         return "parts?faces-redirect=true&computerId=" + this.computer.getId();
     }
 

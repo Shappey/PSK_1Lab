@@ -33,34 +33,32 @@ public class PartsWithComponents {
     @Getter
     private Part part;
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private Component componentToCreate = new Component();
 
-    @Getter
-    @Setter
+    @Getter @Setter
     private Integer computerIdToAssign = 0;
 
     @PostConstruct
     public void init(){
         Map<String, String> requestParameters = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         int partId = Integer.parseInt(requestParameters.get("partId"));
-        part = partsDAO.findOne(partId);
+        this.part = partsDAO.findOne(partId);
     }
 
     @Transactional
     public String createComponent() {
         componentToCreate.setPart(part);
         componentDAO.persist(componentToCreate);
-        return "partComponent?faces-redirect=true&componentID=" + part.getId();
+        return "partComponents?faces-redirect=true&partId=" + part.getId();
     }
 
     @Transactional
     public String assignToComponent() {
-        List<Computer> computer = part.getComputers();
+        List<Computer> computers = part.getComputers();
         Computer computerToAssign = computerDAO.findOne(computerIdToAssign);
-        computer.add(computerToAssign);
-        part.setComputers(computer);
-        return "partComponents?faces-redirect=true&componentID=" + part.getId();
+        computers.add(computerToAssign);
+        part.setComputers(computers);
+        return "partComponents?faces-redirect=true&partId=" + part.getId();
     }
 }

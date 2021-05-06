@@ -2,15 +2,17 @@ package lt.vu.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.enums.BrandName;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@NamedQueries({@NamedQuery(name = "Computer.findAll", query = "select a from Computer as a")
+@NamedQueries({@NamedQuery(name = "Computer.findAll", query = "select c from Computer as c")
 })
 @Table(name = "COMPUTER")
 @Getter
@@ -25,11 +27,8 @@ public class Computer implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "HEIGHT")
-    private Integer height;
-
-    @Column(name = "LENGTH")
-    private Integer length;
+    @Column(name = "BRANDNAME")
+    private BrandName brandName;
 
     @Column(name = "BUILD_DATE")
     private Date buildDate;
@@ -38,6 +37,6 @@ public class Computer implements Serializable {
     private Date warrantyEnd;
 
     @ManyToMany(mappedBy = "computers")
-    private List<Part> parts;
+    private List<Part> parts = new ArrayList<>();
 
 }

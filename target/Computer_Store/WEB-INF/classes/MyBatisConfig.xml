@@ -7,7 +7,7 @@
         <typeAlias type="lt.vu.mybatis.model.Part" alias="Part"/>
         <typeAlias type="lt.vu.mybatis.model.Computer" alias="Computer"/>
         <typeAlias type="lt.vu.mybatis.model.Component" alias="Component"/>
-        <typeAlias type="lt.vu.mybatis.model.Part_Component" alias="Part_Component"/>
+        <typeAlias type="lt.vu.mybatis.model.Part_Computer" alias="Part_Computer"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -21,6 +21,6 @@
         <mapper resource="mybatis.xml/PartMapper.xml"/>
         <mapper resource="mybatis.xml/ComputerMapper.xml"/>
         <mapper resource="mybatis.xml/ComponentMapper.xml"/>
-        <mapper resource="mybatis.xml/Part_ComponentMapper.xml"/>
+        <mapper resource="mybatis.xml/Part_ComputerMapper.xml"/>
     </mappers>
 </configuration>

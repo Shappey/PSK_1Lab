@@ -19,9 +19,6 @@ public class Computers {
     @Inject
     private ComputerDAO computersDao;
 
-    @Resource
-    private TransactionSynchronizationRegistry tx;
-
     @Getter
     private List<Computer> allComputers;
 
@@ -35,8 +32,7 @@ public class Computers {
 
     @Transactional
     public String createComputer() {
-        System.out.println("Pirmas PC TX: " + tx.getTransactionKey());
-        this.computersDao.persist(computerToCreate);
+        computersDao.persist(computerToCreate);
         return "index?faces-redirect=true";
     }
 

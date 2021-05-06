@@ -176,19 +176,19 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_0B4D847A_08FA_465D_A819_F3A4B618BB66">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_03F2FE75_E1B5_4A6C_BE2B_69BFB5929939">
+      <ObjectId>8</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(3)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_2E1B7F19_624C_44F5_B2AA_038E20183D56">
       <ObjectId>12</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_E1721B0C_87FE_4471_9F95_97ABCF73D133">
-      <ObjectId>8</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(1)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_F26EBD38_55EA_4186_B695_D4D128A474D8">
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_8BB5DA4B_202A_4608_977A_933A05C07E14">
       <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(1)</SequenceIdentity>
@@ -203,7 +203,7 @@
     <table id="169" parent="4" name="PART">
       <ObjectId>11</ObjectId>
     </table>
-    <table id="170" parent="4" name="PART_COMPONENT">
+    <table id="170" parent="4" name="PART_COMPUTER">
       <ObjectId>15</ObjectId>
     </table>
     <column id="171" parent="167" name="ID">
@@ -216,15 +216,19 @@
       <Position>2</Position>
       <DataType>VARCHAR(50)|0s</DataType>
     </column>
-    <column id="173" parent="167" name="TYPE">
+    <column id="173" parent="167" name="QUANTITY">
       <Position>3</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="174" parent="167" name="PART_ID">
+    <column id="174" parent="167" name="TYPE">
       <Position>4</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <index id="175" parent="167" name="PRIMARY_KEY_5">
+    <column id="175" parent="167" name="PART_ID">
+      <Position>5</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <index id="176" parent="167" name="PRIMARY_KEY_5">
       <ObjectId>5</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>73</SourceTextLength>
@@ -232,19 +236,19 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="176" parent="167" name="FK4DUNAYPVDBC3EBFVQMNPY6I1Y_INDEX_5">
+    <index id="177" parent="167" name="FKHC2TU2QBSWQAP6HOCPW9XPUP0_INDEX_5">
       <ObjectId>16</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>94</SourceTextLength>
       <ColNames>PART_ID</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="177" parent="167" name="CONSTRAINT_5">
+    <key id="178" parent="167" name="CONSTRAINT_5">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="178" parent="167" name="FK4DUNAYPVDBC3EBFVQMNPY6I1Y">
+    <foreign-key id="179" parent="167" name="FKHC2TU2QBSWQAP6HOCPW9XPUP0">
       <ColNames>PART_ID</ColNames>
       <RefTableName>PART</RefTableName>
       <RefKeyName>PRIMARY_KEY_2</RefKeyName>
@@ -252,37 +256,29 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <column id="179" parent="168" name="ID">
+    <column id="180" parent="168" name="ID">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(3)</SequenceIdentity>
     </column>
-    <column id="180" parent="168" name="BUILD_DATE">
+    <column id="181" parent="168" name="BRANDNAME">
       <Position>2</Position>
+      <DataType>INTEGER|0s</DataType>
+    </column>
+    <column id="182" parent="168" name="BUILD_DATE">
+      <Position>3</Position>
       <DataType>TIMESTAMP|0s</DataType>
     </column>
-    <column id="181" parent="168" name="HEIGHT">
-      <Position>3</Position>
-      <DataType>INTEGER|0s</DataType>
-    </column>
-    <column id="182" parent="168" name="LENGTH">
-      <Position>4</Position>
-      <DataType>INTEGER|0s</DataType>
-    </column>
     <column id="183" parent="168" name="NAME">
-      <Position>5</Position>
+      <Position>4</Position>
       <DataType>VARCHAR(50)|0s</DataType>
     </column>
     <column id="184" parent="168" name="WARRANTY_END_DATE">
-      <Position>6</Position>
+      <Position>5</Position>
       <DataType>TIMESTAMP|0s</DataType>
     </column>
-    <column id="185" parent="168" name="PART_ID">
-      <Position>7</Position>
-      <DataType>INTEGER|0s</DataType>
-    </column>
-    <index id="186" parent="168" name="PRIMARY_KEY_A">
+    <index id="185" parent="168" name="PRIMARY_KEY_A">
       <ObjectId>9</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>72</SourceTextLength>
@@ -290,45 +286,26 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="187" parent="168" name="FKTKHWUH6M53WLBYF1SEJ4Q5Y09_INDEX_A">
-      <ObjectId>18</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>93</SourceTextLength>
-      <ColNames>PART_ID</ColNames>
-      <AutoCreated>1</AutoCreated>
-    </index>
-    <key id="188" parent="168" name="CONSTRAINT_A">
+    <key id="186" parent="168" name="CONSTRAINT_A">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="189" parent="168" name="FKTKHWUH6M53WLBYF1SEJ4Q5Y09">
-      <ColNames>PART_ID</ColNames>
-      <RefTableName>PART</RefTableName>
-      <RefKeyName>PRIMARY_KEY_2</RefKeyName>
-      <RefColNames>ID</RefColNames>
-      <OnDelete>restrict</OnDelete>
-      <OnUpdate>restrict</OnUpdate>
-    </foreign-key>
-    <column id="190" parent="169" name="ID">
+    <column id="187" parent="169" name="ID">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null(1)</SequenceIdentity>
     </column>
-    <column id="191" parent="169" name="NAME">
+    <column id="188" parent="169" name="PART_NAME">
       <Position>2</Position>
       <DataType>VARCHAR(20)|0s</DataType>
     </column>
-    <column id="192" parent="169" name="PRICE">
+    <column id="189" parent="169" name="PRICE">
       <Position>3</Position>
       <DataType>INTEGER|0s</DataType>
     </column>
-    <column id="193" parent="169" name="PRODUCTID">
-      <Position>4</Position>
-      <DataType>INTEGER|0s</DataType>
-    </column>
-    <index id="194" parent="169" name="PRIMARY_KEY_2">
+    <index id="190" parent="169" name="PRIMARY_KEY_2">
       <ObjectId>13</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SourceTextLength>68</SourceTextLength>
@@ -336,36 +313,36 @@
       <Unique>1</Unique>
       <AutoCreated>1</AutoCreated>
     </index>
-    <key id="195" parent="169" name="CONSTRAINT_2">
+    <key id="191" parent="169" name="CONSTRAINT_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="196" parent="170" name="PARTS_ID">
+    <column id="192" parent="170" name="PARTS_ID">
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="197" parent="170" name="COMPONENTS_ID">
+    <column id="193" parent="170" name="COMPUTERS_ID">
       <Position>2</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="198" parent="170" name="FK540FE41T80QS50SIIP58OMRL5_INDEX_7">
-      <ObjectId>22</ObjectId>
+    <index id="194" parent="170" name="FK1A94BOCR0H3LMVSK0RG2EV659_INDEX_6">
+      <ObjectId>20</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>100</SourceTextLength>
+      <SourceTextLength>99</SourceTextLength>
       <ColNames>PARTS_ID</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <index id="199" parent="170" name="FKCVQT439JKOABRBP9OW6UBGY54_INDEX_7">
-      <ObjectId>20</ObjectId>
+    <index id="195" parent="170" name="FKF3Q4Y7DXMG44XL8P9FTPP4PC9_INDEX_6">
+      <ObjectId>18</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SourceTextLength>105</SourceTextLength>
-      <ColNames>COMPONENTS_ID</ColNames>
+      <SourceTextLength>103</SourceTextLength>
+      <ColNames>COMPUTERS_ID</ColNames>
       <AutoCreated>1</AutoCreated>
     </index>
-    <foreign-key id="200" parent="170" name="FK540FE41T80QS50SIIP58OMRL5">
+    <foreign-key id="196" parent="170" name="FK1A94BOCR0H3LMVSK0RG2EV659">
       <ColNames>PARTS_ID</ColNames>
       <RefTableName>PART</RefTableName>
       <RefKeyName>PRIMARY_KEY_2</RefKeyName>
@@ -373,10 +350,10 @@
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>
     </foreign-key>
-    <foreign-key id="201" parent="170" name="FKCVQT439JKOABRBP9OW6UBGY54">
-      <ColNames>COMPONENTS_ID</ColNames>
-      <RefTableName>COMPONENT</RefTableName>
-      <RefKeyName>PRIMARY_KEY_5</RefKeyName>
+    <foreign-key id="197" parent="170" name="FKF3Q4Y7DXMG44XL8P9FTPP4PC9">
+      <ColNames>COMPUTERS_ID</ColNames>
+      <RefTableName>COMPUTER</RefTableName>
+      <RefKeyName>PRIMARY_KEY_A</RefKeyName>
       <RefColNames>ID</RefColNames>
       <OnDelete>restrict</OnDelete>
       <OnUpdate>restrict</OnUpdate>

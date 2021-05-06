@@ -17,10 +17,7 @@ import java.util.List;
 public class ComputerMyBatis {
 
     @Inject
-    private ComputerMapper computersDao;
-
-    @Resource
-    private TransactionSynchronizationRegistry tx;
+    private ComputerMapper computerMapper;
 
     @Getter
     private List<Computer> allComputers;
@@ -30,17 +27,16 @@ public class ComputerMyBatis {
 
     @PostConstruct
     public void init(){
-        loadAllComputers();
+        this.loadAllComputers();
     }
 
     @Transactional
     public String createComputer() {
-        System.out.println("Pirmas PC TX: " + tx.getTransactionKey());
-        this.computersDao.insert(computerToCreate);
-        return "index?faces-redirect=true";
+        computerMapper.insert(computerToCreate);
+        return "computers?faces-redirect=true";
     }
 
     private void loadAllComputers() {
-        this.allComputers = computersDao.selectAll();
+        this.allComputers = computerMapper.selectAll();
     }
 }

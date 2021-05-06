@@ -14,8 +14,7 @@
           <element id="module-output" name="Computer_Store" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.196" />
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.20" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.10" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.3" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis-cdi:1.1.1" />
         </element>

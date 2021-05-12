@@ -6,10 +6,8 @@ import lt.vu.entities.Computer;
 import lt.vu.persistence.ComputerDAO;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
-import javax.transaction.TransactionSynchronizationRegistry;
 import javax.transaction.Transactional;
 import java.util.List;
 

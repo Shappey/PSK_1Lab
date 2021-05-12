@@ -20,14 +20,13 @@
         <table schema="public" tableName="PART">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
         </table>
+        <table schema="public" tableName="COMPUTER">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
+        </table>
         <table schema="public" tableName="COMPONENT">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
         </table>
         <table schema="public" tableName="PART_COMPUTER">
-        </table>
-        <table schema="public" tableName="COMPUTER">
-            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
-           <!-- <ignoreColumn column="opt_lock_version" /> -->
         </table>
     </context>
 </generatorConfiguration>

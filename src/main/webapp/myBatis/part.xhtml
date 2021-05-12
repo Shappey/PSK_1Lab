@@ -4,8 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world"/>
-</f:view>
+<h:head/>
+<h:body>
+    <h2><b>#{pcBuildPartsMyBatis.computer.name}</b> parts consist of:</h2>
+    <ol>
+        <ui:repeat value="#{pcBuildParts.computer.parts}" var="part">
+            <li>
+                <h:outputText value="#{part.name} #{part.price}" />
+            </li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="Part name" value="#{pcBuildPartsMyBatis.partToCreate.partName}" required="true" />
+        <h:inputText a:placeholder="Price " value="#{pcBuildPartsMyBatis.partToCreate.price}" required="true" />
+        <h:commandButton value="Add a new part for this PC build" action="#{pcBuildPartsMyBatis.createPart}" >
+            <f:param name="computerId" value="#{pcBuildPartsMyBatis.computer.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="computers" value="Back to Computers"/>
+</h:body>
 </html>

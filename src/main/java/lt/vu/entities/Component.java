@@ -7,7 +7,6 @@ import lt.vu.enums.ComponentType;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
 @NamedQueries({
@@ -29,7 +28,7 @@ public class Component implements Serializable {
     private ComponentType type;
 
     @Column(name = "QUANTITY")
-    private Integer quantity;
+    private double quantity;
 
     @ManyToOne
     private Part part;

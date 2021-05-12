@@ -176,20 +176,20 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_03F2FE75_E1B5_4A6C_BE2B_69BFB5929939">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_1D202F71_B4C8_4092_A402_85C7EDB9DAE6">
       <ObjectId>8</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(3)</SequenceIdentity>
+      <SequenceIdentity>null(2)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_2E1B7F19_624C_44F5_B2AA_038E20183D56">
-      <ObjectId>12</ObjectId>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_7D3EA3CB_FE74_46BC_B606_5FB479706A21">
+      <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_8BB5DA4B_202A_4608_977A_933A05C07E14">
-      <ObjectId>4</ObjectId>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_8E167F9C_A04D_43C6_B5BD_B04984DFFFEA">
+      <ObjectId>12</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>null(1)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
@@ -218,7 +218,7 @@
     </column>
     <column id="173" parent="167" name="QUANTITY">
       <Position>3</Position>
-      <DataType>INTEGER|0s</DataType>
+      <DataType>DOUBLE|0s</DataType>
     </column>
     <column id="174" parent="167" name="TYPE">
       <Position>4</Position>
@@ -260,7 +260,7 @@
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(3)</SequenceIdentity>
+      <SequenceIdentity>null(2)</SequenceIdentity>
     </column>
     <column id="181" parent="168" name="BRANDNAME">
       <Position>2</Position>
@@ -299,11 +299,11 @@
     </column>
     <column id="188" parent="169" name="PART_NAME">
       <Position>2</Position>
-      <DataType>VARCHAR(20)|0s</DataType>
+      <DataType>VARCHAR(50)|0s</DataType>
     </column>
     <column id="189" parent="169" name="PRICE">
       <Position>3</Position>
-      <DataType>INTEGER|0s</DataType>
+      <DataType>DOUBLE|0s</DataType>
     </column>
     <index id="190" parent="169" name="PRIMARY_KEY_2">
       <ObjectId>13</ObjectId>

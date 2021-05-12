@@ -10,13 +10,13 @@
     <h2>Computer {MyBatis}:</h2>
     <ol>
         <ui:repeat value="#{computerMyBatis.allComputers}" var="computer">
-            <li><h:link value="#{computer.name}" outcome="users?projectId=#{computer.id}" /></li>
+            <li><h:link value="#{computer.name}" outcome="part?computerId=#{computer.id}" /></li>
         </ui:repeat>
     </ol>
     <h:form>
         <h:inputText value="#{computerMyBatis.computerToCreate.name}" required="true" />
         <h:commandButton value="Create a new PC build" action="#{computerMyBatis.createComputer}" />
     </h:form>
-    <h:link outcome="/index" value="Baack to index"/>
+    <h:link outcome="/index" value="Back to index"/>
 </h:body>
 </html>

@@ -10,8 +10,8 @@
 <h:body>
     <h2>Part: <b>#{partsWithComponents.part.name}</b>:</h2>
     <ol>
-        <ui:repeat value="#{partsWithComponents.part.components}" var="component">
-            <li><h:link value="#{component.componentName}"/></li>
+        <ui:repeat value="#{partsWithComponents.part.components}" var="component1">
+           <li><h:outputText value="#{component1.componentName}"/></li>
         </ui:repeat>
     </ol>
     <h:form>
@@ -20,14 +20,13 @@
             <f:param name="partId" value="#{partsWithComponents.part.id}"/>
         </h:commandButton>
     </h:form>
+    <h2>Add this part <b>#{partsWithComponents.part.name}</b> to an existing Computer by ID</h2>
     <h:form>
-        <h:selectOneMenu value = "#{partsWithComponents.computerIdToAssign}">
-            <f:selectItems value="#{computers.allComputers}" var="computer" itemValue="#{computer.id}" itemLabel="#{computer.name}" />
-        </h:selectOneMenu>
+        <h:inputText a:placeholder="COPUTER ID to assign" value="#{partsWithComponents.computerIdToAssign}" required="true" />
         <h:commandButton value="Add a part to an existing computer" action="#{partsWithComponents.assignToComponent}">
             <f:param name="partId" value="#{partsWithComponents.part.id}"/>
         </h:commandButton>
     </h:form>
-    <h:link outcome="parts?computerId=#{computer.id}" value="Previous page"/>
+    <h:link outcome="index" value="Index page"/>
 </h:body>
 </html>

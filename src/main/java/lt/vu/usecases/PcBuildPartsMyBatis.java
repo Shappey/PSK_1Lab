@@ -4,6 +4,7 @@ package lt.vu.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.mybatis.dao.ComputerMapper;
+import lt.vu.mybatis.dao.PartComputerMapper;
 import lt.vu.mybatis.dao.PartMapper;
 import lt.vu.mybatis.model.Computer;
 import lt.vu.mybatis.model.Part;
@@ -27,8 +28,8 @@ public class PcBuildPartsMyBatis {
     @Inject
     private PartMapper partMapper;
 
-    //@Inject
-    //pprivate ClientMovieMapper clientMovieMapper;
+    @Inject
+    private PartComputerMapper partComputerMapper1;
 
     @Getter
     @Setter
@@ -49,10 +50,11 @@ public class PcBuildPartsMyBatis {
     public String createPart() {
         List<Computer> computers = new ArrayList<>();
         computers.add(this.computer);
-        //this.partToCreate.setComputer(computers);
+        //this.partToCreate.setComputers((computers));
         partMapper.insert(this.partToCreate);
-        return "parts?faces-redirect=true&computerId=" + this.computer.getId();
+        return "/myBatis/part?faces-redirect=true&computerId=" + this.computer.getId();
     }
+
 
 
 }

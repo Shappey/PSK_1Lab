@@ -7,7 +7,7 @@
     <groupId>lt.mif.vu</groupId>
     <artifactId>Computer_Store</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>Computer Store Webapp</name>
+    <name>Computer_Store</name>
     <packaging>war</packaging>
 
     <properties>
@@ -53,8 +53,6 @@
     </dependencies>
 
     <build>
-        <finalName>Computer_Store</finalName>
-        <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.mybatis.generator</groupId>
@@ -86,6 +84,5 @@
                     <version>3.3.1</version>
                 </plugin>
             </plugins>
-        </pluginManagement>
     </build>
 </project>

@@ -61,4 +61,6 @@ public class PartsWithComponents {
         part.setComputers(computers);
         return "partComponents?faces-redirect=true&partId=" + part.getId();
     }
+
+
 }

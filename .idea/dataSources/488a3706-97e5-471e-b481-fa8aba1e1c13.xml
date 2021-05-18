@@ -176,22 +176,22 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_1D202F71_B4C8_4092_A402_85C7EDB9DAE6">
-      <ObjectId>8</ObjectId>
-      <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(2)</SequenceIdentity>
-      <AutoCreated>1</AutoCreated>
-    </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_7D3EA3CB_FE74_46BC_B606_5FB479706A21">
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_4C69ECB7_9303_45DA_93F3_9E0ED5C89AFD">
       <ObjectId>4</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(3)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_8E167F9C_A04D_43C6_B5BD_B04984DFFFEA">
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_60847E89_1FCA_49A1_8549_C3332B114E6C">
       <ObjectId>12</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(4)</SequenceIdentity>
+      <AutoCreated>1</AutoCreated>
+    </sequence>
+    <sequence id="166" parent="4" name="SYSTEM_SEQUENCE_85C67187_0733_41D0_95E9_472C44BEF587">
+      <ObjectId>8</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <SequenceIdentity>null(5)</SequenceIdentity>
       <AutoCreated>1</AutoCreated>
     </sequence>
     <table id="167" parent="4" name="COMPONENT">
@@ -210,7 +210,7 @@
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(3)</SequenceIdentity>
     </column>
     <column id="172" parent="167" name="COMPONENT_NAME">
       <Position>2</Position>
@@ -260,7 +260,7 @@
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(2)</SequenceIdentity>
+      <SequenceIdentity>null(5)</SequenceIdentity>
     </column>
     <column id="181" parent="168" name="BRANDNAME">
       <Position>2</Position>
@@ -295,7 +295,7 @@
       <Position>1</Position>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
-      <SequenceIdentity>null(1)</SequenceIdentity>
+      <SequenceIdentity>null(4)</SequenceIdentity>
     </column>
     <column id="188" parent="169" name="PART_NAME">
       <Position>2</Position>

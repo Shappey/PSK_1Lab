@@ -27,6 +27,12 @@
             <f:param name="partId" value="#{partsWithComponents.part.id}"/>
         </h:commandButton>
     </h:form>
+    <h2>Coputers that have this part <b>#{partsWithComponents.part.name}</b></h2>
+    <ol>
+        <ui:repeat value="#{partsWithComponents.part.computers}" var="computer1">
+            <li><h:outputText value="#{computer1.name}"/></li>
+        </ui:repeat>
+    </ol>
     <h:link outcome="index" value="Index page"/>
 </h:body>
 </html>

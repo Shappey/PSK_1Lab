@@ -14,15 +14,15 @@ import java.util.concurrent.ExecutionException;
 
 @SessionScoped
 @Named
-public class ButtonCooldown implements Serializable {
+public class RandomPriceGenerator implements Serializable {
 
     @Inject
     private PartPriceGenerator partPriceGenerator;
 
-    private CompletableFuture<Integer> partCreatorTask = null;
+    private CompletableFuture<Integer> priceGenerationTask = null;
 
     public void startWork() {
-        partCreatorTask = CompletableFuture.supplyAsync(()-> partPriceGenerator.generatePartPrice());
+        priceGenerationTask = CompletableFuture.supplyAsync(()-> partPriceGenerator.generatePartPrice());
     }
 
     @PostConstruct
@@ -30,23 +30,23 @@ public class ButtonCooldown implements Serializable {
         System.out.println("NEW BEAN CREATED TO GENERATE PART PRICE");
     }
 
-    public boolean isPartCreatorRunning() {
-        return partCreatorTask != null && !partCreatorTask.isDone();
+    public boolean isPriceGeneratorRunning() {
+        return priceGenerationTask != null && !priceGenerationTask.isDone();
     }
 
     public String getPartCreationStatus() throws ExecutionException, InterruptedException {
-        if (partCreatorTask == null) {
-            return "Add a new part for this Computer";
-        } else if (isPartCreatorRunning()) {
-            return "Part creation in progress";
+        if (priceGenerationTask == null) {
+            return "Generate a new price: ";
+        } else if (isPriceGeneratorRunning()) {
+            return "Price is being generated! ";
         }
-        return "Add a new Part for this Computer" + partCreatorTask.get();
+        return "Generated price is: " + priceGenerationTask.get();
     }
 
     public String generateNewPrice(){
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        partCreatorTask = CompletableFuture.supplyAsync(()-> partPriceGenerator.generatePartPrice());
+        priceGenerationTask = CompletableFuture.supplyAsync(()-> partPriceGenerator.generatePartPrice());
 
         return  "/parts?faces-redirect=true&computerId=" + requestParameters.get("computerId");
     }

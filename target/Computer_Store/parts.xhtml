@@ -19,7 +19,16 @@
     <h:form>
         <h:inputText a:placeholder="Part Name" value="#{pcBuildParts.partToCreate.name}" required="true" />
         <h:inputText a:placeholder="Price" value="#{pcBuildParts.partToCreate.price}" required="true" />
-        <h:commandButton value="Add a new part for this PC build" action="#{pcBuildParts.createPart}" >
+        <h:commandButton value="Add a new part for this PC build" action="#{pcBuildParts.createPart}">
+            <f:param name="computerId" value="#{pcBuildParts.computer.id}" />
+        </h:commandButton>
+    </h:form>
+    <br/>
+    <h3>Generate a suggested price for a part:</h3>
+    <h:form>
+        <h:outputText value="#{randomPriceGenerator.partCreationStatus}" />
+        <br/>
+        <h:commandButton value="GENERATE" disabled="#{randomPriceGenerator.priceGeneratorRunning}" action="#{randomPriceGenerator.generateNewPrice()}">
             <f:param name="computerId" value="#{pcBuildParts.computer.id}" />
         </h:commandButton>
     </h:form>

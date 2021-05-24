@@ -1,7 +1,7 @@
 package lt.vu.usecases.decorator;
 
-public interface IPartCreator {
+public interface IPartPriceGenerator {
 
-    Integer createPart();
+    Integer generatePartPrice();
 
 }

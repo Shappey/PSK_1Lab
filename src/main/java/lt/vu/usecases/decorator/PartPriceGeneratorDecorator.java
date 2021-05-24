@@ -6,25 +6,24 @@ import javax.enterprise.inject.Any;
 import javax.inject.Inject;
 
 @Decorator
-public class PartCreatorDecorator implements IPartCreator{
+public class PartPriceGeneratorDecorator implements IPartPriceGenerator {
 
     @Inject
     @Delegate
     @Any
-    IPartCreator partCreator;
+    IPartPriceGenerator iPartPriceGenerator;
 
     @Override
-    public Integer createPart(){
-        System.out.println("we made it 1");
+    public Integer generatePartPrice(){
         try{
-            partCreator.createPart();
-            System.out.println("we made it 2");
-            Thread.sleep(7000);
+            Integer generatedPrice = iPartPriceGenerator.generatePartPrice();
+            Thread.sleep(6000);
             System.out.println("Decorator DONE");
+            return generatedPrice;
         }catch (InterruptedException e){
-
+            return 0;
         }
-        return 4;
+
     }
 
 }

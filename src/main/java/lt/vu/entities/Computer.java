@@ -39,4 +39,7 @@ public class Computer implements Serializable {
     @ManyToMany(mappedBy = "computers")
     private List<Part> parts = new ArrayList<>();
 
+    @Version
+    private Integer version;
+
 }

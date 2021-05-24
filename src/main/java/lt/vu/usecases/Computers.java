@@ -4,6 +4,7 @@ import lombok.Setter;
 import lombok.Getter;
 import lt.vu.entities.Computer;
 import lt.vu.persistence.ComputerDAO;
+import lt.vu.persistence.IComputerDAO;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Computers {
 
     @Inject
-    private ComputerDAO computersDao;
+    private IComputerDAO computersDao;
 
     @Getter
     private List<Computer> allComputers;

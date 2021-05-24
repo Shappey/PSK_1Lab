@@ -4,4 +4,13 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
        bean-discovery-mode="all">
+<!--            <alternatives>-->
+<!--                <class>lt.vu.persistence.TestComputersDAO</class>-->
+<!--            </alternatives>-->
+        <interceptors>
+            <class>lt.vu.interceptors.MethodLogger</class>
+        </interceptors>
+        <decorators>
+            <class>lt.vu.usecases.decorator.PartPriceGeneratorDecorator</class>
+        </decorators>
 </beans>

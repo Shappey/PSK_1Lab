@@ -3,12 +3,14 @@ package lt.vu.persistence;
 import lt.vu.entities.Computer;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
 @ApplicationScoped
-public class ComputerDAO {
+@Default
+public class ComputerDAO implements IComputerDAO{
 
     @Inject
     private EntityManager em;
@@ -28,5 +30,7 @@ public class ComputerDAO {
     public Computer update(Computer computer){
         return em.merge(computer);
     }
+
+    public void flush() {em.flush();}
 }
 

@@ -51,26 +51,29 @@ public class ComputerController {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
-    public Response update(@PathParam("id") final Integer computerId, ComputerDTO computerDTO, @QueryParam("ole")final Boolean invokeOLE){ //RENAME INVOKE IR OLE
+    public Response update(@PathParam("id") final Integer computerId, ComputerDTO computerDTO, @QueryParam("ole")final Boolean invokeOLE){
         try{
-            Computer oldComputer = computerDAO.findOne(computerId);
-            if(oldComputer == null){
+            Computer existingComputer = computerDAO.findOne(computerId);
+            if(existingComputer == null){
                 return Response.status(Response.Status.NOT_FOUND).build();
             }
-            oldComputer.setName(computerDTO.getName());
+            existingComputer.setName(computerDTO.getName());
             DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            oldComputer.setBuildDate(format.parse(computerDTO.getBuildDate()));
-            oldComputer.setWarrantyEnd(format.parse(computerDTO.getWarrantyEnd()));
+            existingComputer.setBuildDate(format.parse(computerDTO.getBuildDate()));
+            existingComputer.setWarrantyEnd(format.parse(computerDTO.getWarrantyEnd()));
 
-            computerDAO.update(oldComputer);
+            computerDAO.update(existingComputer);
             if(invokeOLE != null && invokeOLE){
+                Thread.sleep(6000);
                 computerDAO.flush();
-                computerDAO.persist(oldComputer);
+                computerDAO.persist(existingComputer);
             }
             return Response.ok().build();
         }catch (OptimisticLockException e){
             return Response.status(Response.Status.CONFLICT).build();
         }catch (ParseException e){
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        } catch (InterruptedException e) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }

@@ -17,7 +17,7 @@ public class TestComputersDAO implements IComputerDAO { //CHANGE
         List<Computer> computers = new ArrayList<>();
         Computer computer = new Computer();
         computer.setName("Test Computer for Alternative method");
-        computer.setId(1);
+        computer.setId(100);
         computer.setBrandName(BrandName.Origin);
         computers.add(computer);
         return computers;

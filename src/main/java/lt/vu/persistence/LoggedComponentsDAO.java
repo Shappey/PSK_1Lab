@@ -17,7 +17,7 @@ public class LoggedComponentsDAO extends ComponentDAO{
     private EntityManager em;
 
     public void persist(Component component){
-        System.out.println("Persisting component safely"); //CHANGE MAYBE EVERY METHOD USES LOGGING
+        System.out.println("Persisting component safely");
         this.em.persist(component);
     }
 }

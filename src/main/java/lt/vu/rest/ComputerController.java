@@ -16,7 +16,9 @@ import javax.ws.rs.core.Response;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @ApplicationScoped
 @Path("/computers")
@@ -45,6 +47,30 @@ public class ComputerController {
         }
 
         return Response.ok(computerDTO).build();
+    }
+
+    @Path("/all")
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response getAll(){
+        List<Computer> computers = computerDAO.getAllComputers();
+        List<ComputerDTO> allList = new ArrayList<ComputerDTO>();
+        if (computers == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        for(Computer C : computers){
+            ComputerDTO computerDTO = new ComputerDTO();
+            computerDTO.setName(C.getName());
+            if(C.getBuildDate() != null) {
+                computerDTO.setBuildDate(C.getBuildDate().toString());
+            }
+            if(C.getWarrantyEnd() != null){
+                computerDTO.setWarrantyEnd(C.getWarrantyEnd().toString());
+            }
+            allList.add(computerDTO);
+        }
+
+        return Response.ok(allList).build();
     }
 
     @Path("/{id}")

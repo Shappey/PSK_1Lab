@@ -1,5 +1,6 @@
 package lt.vu.usecases;
 
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.usecases.decorator.PartPriceGenerator;
 
 import javax.annotation.PostConstruct;
@@ -43,6 +44,7 @@ public class RandomPriceGenerator implements Serializable {
         return "Generated price is: " + priceGenerationTask.get();
     }
 
+    @LoggedInvocation
     public String generateNewPrice(){
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();

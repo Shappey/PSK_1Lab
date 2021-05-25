@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lt.vu.entities.Computer;
 import lt.vu.entities.Part;
+import lt.vu.interceptors.LoggedInvocation;
 import lt.vu.persistence.ComputerDAO;
 import lt.vu.persistence.PartsDAO;
 
@@ -40,6 +41,7 @@ public class PcBuildParts implements Serializable {
     }
 
     @Transactional
+    @LoggedInvocation
     public String createPart() {
         List<Computer> computers = new ArrayList<>();
         computers.add(this.computer);
@@ -47,6 +49,5 @@ public class PcBuildParts implements Serializable {
         partsDAO.persist(this.partToCreate);
         return "parts?faces-redirect=true&computerId=" + this.computer.getId();
     }
-
 
 }
